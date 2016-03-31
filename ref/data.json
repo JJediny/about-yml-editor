@@ -1,0 +1,300 @@
+{
+  "title": "Dataset - data.json v1.1",
+  "type": "object",
+  "properties": {
+    "title": {
+      "title": "Title",
+      "description": "Title or Name of the Project",
+      "type": "string",
+      "minLength": 10,
+      "propertyOrder": 1
+    },
+    "description": {
+      "title": "Description",
+      "description": "Abstract or Summary of the Project",
+      "format": "textarea",
+      "type": "string",
+      "minLength": 10,
+      "propertyOrder": 2
+    },
+    "theme": {
+      "title": "Theme",
+      "description": "Based on Common Mission Areas from Federal Enterprise Architecture v2",
+      "type": "string",
+      "enum": [
+        "Defense and Security",
+        "Diplomacy and Trade",
+        "Economic and Financial",
+        "Education and Workforce",
+        "Energy and Technology",
+        "Environment and Natural Resources",
+        "Health and Well-Being",
+        "Law and Justice",
+        "Transport and Space",
+        "General Government"
+      ],
+      "propertyOrder": 3
+    },
+    "keywords": {
+      "type": "array",
+      "title": "Keywords",
+      "description": "",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "title": "Keyword"
+      },
+      "propertyOrder": 4
+    },
+    "distribution": {
+      "type": "array",
+      "format": "table",
+      "title": "Distribution",
+      "description": "Distributions for the Dataset",
+      "uniqueItems": true,
+      "propertyOrder": 5,
+      "items": {
+        "type": "object",
+        "title": "Distribution",
+        "headerTemplate": "{{ self.format }}",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Title"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "description": ""
+          },
+          "downloadURL": {
+            "type": "string",
+            "title": "URL",
+            "description": "Download/Direct Link to File"
+          },
+          "format": {
+            "type": "string",
+            "title": "Format",
+            "description": "File or Format",
+            "enum": [
+              "html",
+              "api",
+              "csv",
+              "json",
+              "geocsv",
+              "geojson",
+              "geopackage",
+              "shapefile",
+              "xls",
+              "ods",
+              "pdf"
+            ],
+            "default": ""
+          },
+          "describedBy": {
+            "type": "string",
+            "title": "Described By",
+            "description": "URL to file that describes the data fields"
+          }
+        }
+      }
+    },
+    "contactPoint": {
+      "type": "array",
+      "format": "tabs",
+      "title": "Point of Contacts",
+      "description": "Point of Contact(s) for Dataset",
+      "uniqueItems": true,
+      "propertyOrder": 6,
+      "items": {
+        "type": "object",
+        "title": "Contact",
+        "headerTemplate": "{{ self.fn }}",
+        "properties": {
+          "fn": {
+            "type": "string",
+            "title": "Full Name"
+          },
+          "hasEmail": {
+            "type": "string",
+            "title": "Email",
+            "description": "Email address for the contact"
+          }
+        }
+      }
+    },
+    "publisher": {
+      "type": "array",
+      "format": "table",
+      "title": "Publisher",
+      "description": "Organization publishing this dataset",
+      "uniqueItems": true,
+      "propertyOrder": 7,
+      "items": {
+        "type": "object",
+        "title": "Publisher",
+        "headerTemplate": "{{ self.name }}",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Organization",
+            "description": "Name of the Organization"
+          }
+        }
+      }
+    },
+    "bureauCode": {
+      "title": "Bureau Code",
+      "description": "Federal agencies, list the primary program related to this data asset, from the <a href=\"https://www.performance.gov/sites/default/files/files/FederalProgramInventory_FY13_MachineReadable_091613.xls\">Federal Program Inventory</a>. Use the format of <code>015:001</code>",
+      "type": "string",
+      "propertyOrder": 8
+    },
+    "rights": {
+      "title": "Rights",
+      "description": "This may include information regarding access or restrictions based on privacy, security, or other policies. This should also provide an explanation for the selected accessLevel including instructions for how to access a restricted file. May also be used for attribution or citation requirements",
+      "type": "string",
+      "propertyOrder": 9
+    },
+    "accessLevel": {
+      "title": "Access Level",
+      "description": "The degree to which this dataset could be made publicly-available, regardless of whether it has been made available. Choices: public (Data asset is or could be made publicly available to all without restrictions), restricted public (Data asset is available under certain use restrictions), or non-public (Data asset is not available to members of the public)",
+      "type": "string",
+      "default": "public",
+      "enum": [
+        "public",
+        "restricted",
+        "non-public"
+      ],
+      "propertyOrder": 10
+    },
+    "rights": {
+      "title": "Rights",
+      "description": "This may include information regarding access or restrictions based on privacy, security, or other policies. This should also provide an explanation for the selected accessLevel including instructions for how to access a restricted file. May also be used for attribution or citation requirements",
+      "type": "string",
+      "propertyOrder": 11
+    },
+    "license": {
+      "title": "License",
+      "description": "The license dataset or API is published with. See <a href=\"https://project-open-data.cio.gov/open-licenses/\">Open Licenses</a> for more information",
+      "type": "string",
+      "default": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "enum": [
+        "https://creativecommons.org/publicdomain/zero/1.0/",
+        "http://www.usa.gov/publicdomain/label/1.0/"
+      ],
+      "propertyOrder": 12
+    },
+    "landingPage": {
+      "title": "URL to where the Dataset is available",
+      "description": "Link to the project website or page from the source Publisher",
+      "type": "string",
+      "minLength": 4,
+      "propertyOrder": 13
+    },
+    "spatial": {
+      "title": "Spatial",
+      "description": "lat, long (point) or x1, y1, x2, y2 (bounding box) in WGS-84 coordinate reference system",
+      "type": "string",
+      "propertyOrder": 14
+    },
+    "temporal": {
+      "type": "string",
+      "title": "Temporal",
+      "description": "Duration",
+      "propertyOrder": 15
+    },
+    "issued": {
+      "type": "string",
+      "format": "date",
+      "title": "Release Date",
+      "description": "Date of formal issuance",
+      "propertyOrder": 16
+    },
+    "modified": {
+      "type": "string",
+      "format": "date",
+      "title": "Modified",
+      "description": "Date the Data was Last Modified",
+      "propertyOrder": 17
+    },
+    "accrualPeriodicity": {
+      "title": "Frequency",
+      "description": "Frequency with which dataset is published",
+      "type": "string",
+      "default": "public",
+      "enum": [
+        "Decennial",
+        "Quadrennial",
+        "Annual",
+        "Semiannual",
+        "Quarterly",
+        "Bimonthly",
+        "Monthly",
+        "Biweekly",
+        "Weekly",
+        "Daily",
+        "Continuously updated"
+      ],
+      "propertyOrder": 18
+    },
+    "dataQuality": {
+      "title": "Data Quality",
+      "description": "Whether the dataset meets the agency’s Information Quality Guidelines (true/false)",
+      "type": "boolean",
+      "default": "true",
+      "propertyOrder": 19
+    },
+    "isPartof": {
+      "type": "array",
+      "format": "table",
+      "title": "Collection",
+      "description": "The collection of which this dataset is a subset",
+      "uniqueItems": true,
+      "propertyOrder": 20,
+      "items": {
+        "type": "object",
+        "title": "parent identifier",
+        "properties": {
+          "parentUUID": {
+            "type": "string",
+            "title": "isPartof",
+            "description": "isPartof implies current dataset is a smaller/subset to a larger project or effort use Parent UUID or URI"
+          }
+        }
+      }
+    },
+    "references": {
+      "type": "array",
+      "title": "Related Documents",
+      "description": "Related documents such as technical information about a dataset, developer documentation, etc.",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "title": "References",
+        "description": "URL to Reference Documents or Websites"
+      },
+      "propertyOrder": 21
+    },
+    "conformsTo": {
+      "title": "conformsTo",
+      "description": "Human readable documentation on schema does not yet exist - only provided as an example",
+      "type": "string",
+      "propertyOrder": 22,
+      "default": "https://project-open-data.cio.gov/v1.1/schema"
+    },
+    "describedBy": {
+      "title": "describedBy",
+      "description": "",
+      "type": "string",
+      "propertyOrder": 23,
+      "default": "https://project-open-data.cio.gov/v1.1/schema/dataset.json"
+    },
+    "identifier": {
+      "title": "Identifier",
+      "description": "UUID are Globally Unique ID used to ensure stablity in referencing and identification of Projects",
+      "type": "string",
+      "format": "uuid",
+      "propertyOrder": 24
+    }
+  }
+}

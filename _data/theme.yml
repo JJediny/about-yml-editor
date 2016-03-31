@@ -1,0 +1,22 @@
+# Based on Common Mission Areas from Federal Enterprise Architecture v2
+themes:
+- theme: Defense and Security
+  definition: Defined by the functions of national defense, homeland security, and intelligence operations and their associated services.
+- theme: Diplomacy and Trade
+  definition: Defined by the functions of international affairs and international commerce and their associated services.
+- theme: Economic and Financial
+  definition: Defined by the functions of economic development and community and social services and their associated services.
+- theme: Education and Workforce
+  definition:  Defined by the functions of education and workforce management and their associated services.
+- theme: Energy and Technology
+  definition: Defined by the functions associated with energy, technology and scientific research and their associated services.
+- theme: Environment and Natural Resources
+  definition: Defined by the functions of environment and our natural resources and their associated services.
+- theme: Health and Well-Being
+  definition: Defined by the functions of health and well-being of the public and their associated services.
+- theme: Law and Justice
+  definition: Defined by the functions of with law enforcement and judicial activities and their associated services.
+- theme: Transport and Space
+  definition: Defined by the functions of transportation modes, including space exploration and their associated services.
+- theme: General Government
+  definition: Defined by the general functions and services associated with all levels of government.
