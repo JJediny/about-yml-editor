@@ -185,7 +185,7 @@
       "propertyOrder": 12
     },
     "landingPage": {
-      "title": "URL to where the Dataset is available",
+      "title": "Landing Page",
       "description": "Link to the project website or page from the source Publisher",
       "type": "string",
       "minLength": 4,
