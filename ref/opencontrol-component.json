@@ -1,12 +1,23 @@
 {
-  "title": "Dataset - data.json v1.1",
+  "title": "Open Control Component Form",
   "type": "object",
   "properties": {
-    "title": {
-      "title": "Title",
-      "description": "Title or Name of the Project",
+    "documentation_complete": {
+      "title": "Implementation Status",
+      "description": "Planned to Implemented",
       "type": "string",
-      "minLength": 10,
+      "enum": [
+        "Defense and Security",
+        "Diplomacy and Trade",
+        "Economic and Financial",
+        "Education and Workforce",
+        "Energy and Technology",
+        "Environment and Natural Resources",
+        "Health and Well-Being",
+        "Law and Justice",
+        "Transport and Space",
+        "General Government"
+      ],
       "propertyOrder": 1
     },
     "description": {

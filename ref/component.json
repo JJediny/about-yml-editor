@@ -1,0 +1,690 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "mapping": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "required": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "type",
+            "required"
+          ]
+        },
+        "key": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ]
+        },
+        "system": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "required": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "type",
+            "required"
+          ]
+        },
+        "schema_version": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "required": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "type",
+            "required"
+          ]
+        },
+        "documentation_complete": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ]
+        },
+        "responsible_role": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ]
+        },
+        "references": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "sequence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "mapping": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "required": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "required"
+                        ]
+                      },
+                      "path": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      "type": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "required": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "required"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "path",
+                      "type"
+                    ]
+                  }
+                },
+                "required": [
+                  "type",
+                  "mapping"
+                ]
+              }
+            }
+          },
+          "required": [
+            "type",
+            "sequence"
+          ]
+        },
+        "verifications": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "sequence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "mapping": {
+                    "type": "object",
+                    "properties": {
+                      "key": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "required": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "required"
+                        ]
+                      },
+                      "name": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "required": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "required"
+                        ]
+                      },
+                      "path": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      "type": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "required": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "required"
+                        ]
+                      },
+                      "description": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      "test_passed": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      "last_run": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "key",
+                      "name",
+                      "path",
+                      "type",
+                      "description",
+                      "test_passed",
+                      "last_run"
+                    ]
+                  }
+                },
+                "required": [
+                  "type",
+                  "mapping"
+                ]
+              }
+            }
+          },
+          "required": [
+            "type",
+            "sequence"
+          ]
+        },
+        "satisfies": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "sequence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "mapping": {
+                    "type": "object",
+                    "properties": {
+                      "standard_key": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "required": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "required"
+                        ]
+                      },
+                      "control_key": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "required": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "required"
+                        ]
+                      },
+                      "narrative": {
+                        "type": "object",
+                        "properties": {
+                          "required": {
+                            "type": "boolean"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "sequence": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "mapping": {
+                                  "type": "object",
+                                  "properties": {
+                                    "key": {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "type"
+                                      ]
+                                    },
+                                    "text": {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string"
+                                        },
+                                        "required": {
+                                          "type": "boolean"
+                                        }
+                                      },
+                                      "required": [
+                                        "type",
+                                        "required"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "key",
+                                    "text"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "mapping"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "required",
+                          "type",
+                          "sequence"
+                        ]
+                      },
+                      "control_origin": {
+                        "type": "object",
+                        "properties": {
+                          "desc": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "desc",
+                          "type"
+                        ]
+                      },
+                      "control_origins": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "sequence": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "sequence"
+                        ]
+                      },
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "sequence": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "mapping": {
+                                  "type": "object",
+                                  "properties": {
+                                    "key": {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string"
+                                        },
+                                        "required": {
+                                          "type": "boolean"
+                                        }
+                                      },
+                                      "required": [
+                                        "type",
+                                        "required"
+                                      ]
+                                    },
+                                    "text": {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string"
+                                        },
+                                        "required": {
+                                          "type": "boolean"
+                                        }
+                                      },
+                                      "required": [
+                                        "type",
+                                        "required"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "key",
+                                    "text"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "mapping"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "sequence"
+                        ]
+                      },
+                      "implementation_status": {
+                        "type": "object",
+                        "properties": {
+                          "desc": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "enum": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "required": [
+                          "desc",
+                          "type",
+                          "enum"
+                        ]
+                      },
+                      "implementation_statuses": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "sequence": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "enum": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "enum"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "sequence"
+                        ]
+                      },
+                      "covered_by": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "sequence": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "mapping": {
+                                  "type": "object",
+                                  "properties": {
+                                    "system_key": {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "type"
+                                      ]
+                                    },
+                                    "component_key": {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "type"
+                                      ]
+                                    },
+                                    "verification_key": {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string"
+                                        },
+                                        "required": {
+                                          "type": "boolean"
+                                        }
+                                      },
+                                      "required": [
+                                        "type",
+                                        "required"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "system_key",
+                                    "component_key",
+                                    "verification_key"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "mapping"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "sequence"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "standard_key",
+                      "control_key",
+                      "narrative",
+                      "control_origin",
+                      "control_origins",
+                      "parameters",
+                      "implementation_status",
+                      "implementation_statuses",
+                      "covered_by"
+                    ]
+                  }
+                },
+                "required": [
+                  "type",
+                  "mapping"
+                ]
+              }
+            }
+          },
+          "required": [
+            "type",
+            "sequence"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "key",
+        "system",
+        "schema_version",
+        "documentation_complete",
+        "responsible_role",
+        "references",
+        "verifications",
+        "satisfies"
+      ]
+    }
+  },
+  "required": [
+    "type",
+    "mapping"
+  ]
+}

@@ -1,0 +1,1323 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string"
+    },
+    "apiVersion": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "generateName": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "selfLink": {
+          "type": "string"
+        },
+        "uid": {
+          "type": "string"
+        },
+        "resourceVersion": {
+          "type": "string"
+        },
+        "generation": {
+          "type": "integer"
+        },
+        "creationTimestamp": {
+          "type": "string"
+        },
+        "deletionTimestamp": {
+          "type": "string"
+        },
+        "deletionGracePeriodSeconds": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "name",
+        "generateName",
+        "namespace",
+        "selfLink",
+        "uid",
+        "resourceVersion",
+        "generation",
+        "creationTimestamp",
+        "deletionTimestamp",
+        "deletionGracePeriodSeconds"
+      ]
+    },
+    "spec": {
+      "type": "object",
+      "properties": {
+        "volumes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "hostPath": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "path"
+                ]
+              },
+              "emptyDir": {
+                "type": "object",
+                "properties": {
+                  "medium": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "medium"
+                ]
+              },
+              "gcePersistentDisk": {
+                "type": "object",
+                "properties": {
+                  "pdName": {
+                    "type": "string"
+                  },
+                  "fsType": {
+                    "type": "string"
+                  },
+                  "partition": {
+                    "type": "integer"
+                  },
+                  "readOnly": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "pdName",
+                  "fsType",
+                  "partition",
+                  "readOnly"
+                ]
+              },
+              "awsElasticBlockStore": {
+                "type": "object",
+                "properties": {
+                  "volumeID": {
+                    "type": "string"
+                  },
+                  "fsType": {
+                    "type": "string"
+                  },
+                  "partition": {
+                    "type": "integer"
+                  },
+                  "readOnly": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "volumeID",
+                  "fsType",
+                  "partition",
+                  "readOnly"
+                ]
+              },
+              "gitRepo": {
+                "type": "object",
+                "properties": {
+                  "repository": {
+                    "type": "string"
+                  },
+                  "revision": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "repository",
+                  "revision"
+                ]
+              },
+              "secret": {
+                "type": "object",
+                "properties": {
+                  "secretName": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "secretName"
+                ]
+              },
+              "nfs": {
+                "type": "object",
+                "properties": {
+                  "server": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  },
+                  "readOnly": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "server",
+                  "path",
+                  "readOnly"
+                ]
+              },
+              "iscsi": {
+                "type": "object",
+                "properties": {
+                  "targetPortal": {
+                    "type": "string"
+                  },
+                  "iqn": {
+                    "type": "string"
+                  },
+                  "lun": {
+                    "type": "integer"
+                  },
+                  "fsType": {
+                    "type": "string"
+                  },
+                  "readOnly": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "targetPortal",
+                  "iqn",
+                  "lun",
+                  "fsType",
+                  "readOnly"
+                ]
+              },
+              "glusterfs": {
+                "type": "object",
+                "properties": {
+                  "endpoints": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  },
+                  "readOnly": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "endpoints",
+                  "path",
+                  "readOnly"
+                ]
+              },
+              "persistentVolumeClaim": {
+                "type": "object",
+                "properties": {
+                  "claimName": {
+                    "type": "string"
+                  },
+                  "readOnly": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "claimName",
+                  "readOnly"
+                ]
+              },
+              "rbd": {
+                "type": "object",
+                "properties": {
+                  "monitors": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "image": {
+                    "type": "string"
+                  },
+                  "fsType": {
+                    "type": "string"
+                  },
+                  "pool": {
+                    "type": "string"
+                  },
+                  "user": {
+                    "type": "string"
+                  },
+                  "keyring": {
+                    "type": "string"
+                  },
+                  "secretRef": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ]
+                  },
+                  "readOnly": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "monitors",
+                  "image",
+                  "fsType",
+                  "pool",
+                  "user",
+                  "keyring",
+                  "secretRef",
+                  "readOnly"
+                ]
+              },
+              "cinder": {
+                "type": "object",
+                "properties": {
+                  "volumeID": {
+                    "type": "string"
+                  },
+                  "fsType": {
+                    "type": "string"
+                  },
+                  "readOnly": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "volumeID",
+                  "fsType",
+                  "readOnly"
+                ]
+              },
+              "cephfs": {
+                "type": "object",
+                "properties": {
+                  "monitors": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "user": {
+                    "type": "string"
+                  },
+                  "secretFile": {
+                    "type": "string"
+                  },
+                  "secretRef": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ]
+                  },
+                  "readOnly": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "monitors",
+                  "user",
+                  "secretFile",
+                  "secretRef",
+                  "readOnly"
+                ]
+              },
+              "flocker": {
+                "type": "object",
+                "properties": {
+                  "datasetName": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "datasetName"
+                ]
+              },
+              "downwardAPI": {
+                "type": "object",
+                "properties": {
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string"
+                        },
+                        "fieldRef": {
+                          "type": "object",
+                          "properties": {
+                            "apiVersion": {
+                              "type": "string"
+                            },
+                            "fieldPath": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "apiVersion",
+                            "fieldPath"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "path",
+                        "fieldRef"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "items"
+                ]
+              },
+              "fc": {
+                "type": "object",
+                "properties": {
+                  "targetWWNs": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "lun": {
+                    "type": "integer"
+                  },
+                  "fsType": {
+                    "type": "string"
+                  },
+                  "readOnly": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "targetWWNs",
+                  "lun",
+                  "fsType",
+                  "readOnly"
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "hostPath",
+              "emptyDir",
+              "gcePersistentDisk",
+              "awsElasticBlockStore",
+              "gitRepo",
+              "secret",
+              "nfs",
+              "iscsi",
+              "glusterfs",
+              "persistentVolumeClaim",
+              "rbd",
+              "cinder",
+              "cephfs",
+              "flocker",
+              "downwardAPI",
+              "fc"
+            ]
+          }
+        },
+        "containers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              },
+              "command": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "args": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "workingDir": {
+                "type": "string"
+              },
+              "ports": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "hostPort": {
+                      "type": "integer"
+                    },
+                    "containerPort": {
+                      "type": "integer"
+                    },
+                    "protocol": {
+                      "type": "string"
+                    },
+                    "hostIP": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "hostPort",
+                    "containerPort",
+                    "protocol",
+                    "hostIP"
+                  ]
+                }
+              },
+              "env": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    },
+                    "valueFrom": {
+                      "type": "object",
+                      "properties": {
+                        "fieldRef": {
+                          "type": "object",
+                          "properties": {
+                            "apiVersion": {
+                              "type": "string"
+                            },
+                            "fieldPath": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "apiVersion",
+                            "fieldPath"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "fieldRef"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "value",
+                    "valueFrom"
+                  ]
+                }
+              },
+              "resources": {
+                "type": "object",
+                "properties": {}
+              },
+              "volumeMounts": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "readOnly": {
+                      "type": "boolean"
+                    },
+                    "mountPath": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "readOnly",
+                    "mountPath"
+                  ]
+                }
+              },
+              "livenessProbe": {
+                "type": "object",
+                "properties": {
+                  "exec": {
+                    "type": "object",
+                    "properties": {
+                      "command": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "required": [
+                      "command"
+                    ]
+                  },
+                  "httpGet": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "port": {
+                        "type": "string"
+                      },
+                      "host": {
+                        "type": "string"
+                      },
+                      "scheme": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "port",
+                      "host",
+                      "scheme"
+                    ]
+                  },
+                  "tcpSocket": {
+                    "type": "object",
+                    "properties": {
+                      "port": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "port"
+                    ]
+                  },
+                  "initialDelaySeconds": {
+                    "type": "integer"
+                  },
+                  "timeoutSeconds": {
+                    "type": "integer"
+                  },
+                  "periodSeconds": {
+                    "type": "integer"
+                  },
+                  "successThreshold": {
+                    "type": "integer"
+                  },
+                  "failureThreshold": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "exec",
+                  "httpGet",
+                  "tcpSocket",
+                  "initialDelaySeconds",
+                  "timeoutSeconds",
+                  "periodSeconds",
+                  "successThreshold",
+                  "failureThreshold"
+                ]
+              },
+              "readinessProbe": {
+                "type": "object",
+                "properties": {
+                  "exec": {
+                    "type": "object",
+                    "properties": {
+                      "command": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "required": [
+                      "command"
+                    ]
+                  },
+                  "httpGet": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string"
+                      },
+                      "port": {
+                        "type": "string"
+                      },
+                      "host": {
+                        "type": "string"
+                      },
+                      "scheme": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "port",
+                      "host",
+                      "scheme"
+                    ]
+                  },
+                  "tcpSocket": {
+                    "type": "object",
+                    "properties": {
+                      "port": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "port"
+                    ]
+                  },
+                  "initialDelaySeconds": {
+                    "type": "integer"
+                  },
+                  "timeoutSeconds": {
+                    "type": "integer"
+                  },
+                  "periodSeconds": {
+                    "type": "integer"
+                  },
+                  "successThreshold": {
+                    "type": "integer"
+                  },
+                  "failureThreshold": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "exec",
+                  "httpGet",
+                  "tcpSocket",
+                  "initialDelaySeconds",
+                  "timeoutSeconds",
+                  "periodSeconds",
+                  "successThreshold",
+                  "failureThreshold"
+                ]
+              },
+              "lifecycle": {
+                "type": "object",
+                "properties": {
+                  "postStart": {
+                    "type": "object",
+                    "properties": {
+                      "exec": {
+                        "type": "object",
+                        "properties": {
+                          "command": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "required": [
+                          "command"
+                        ]
+                      },
+                      "httpGet": {
+                        "type": "object",
+                        "properties": {
+                          "path": {
+                            "type": "string"
+                          },
+                          "port": {
+                            "type": "string"
+                          },
+                          "host": {
+                            "type": "string"
+                          },
+                          "scheme": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "path",
+                          "port",
+                          "host",
+                          "scheme"
+                        ]
+                      },
+                      "tcpSocket": {
+                        "type": "object",
+                        "properties": {
+                          "port": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "port"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "exec",
+                      "httpGet",
+                      "tcpSocket"
+                    ]
+                  },
+                  "preStop": {
+                    "type": "object",
+                    "properties": {
+                      "exec": {
+                        "type": "object",
+                        "properties": {
+                          "command": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "required": [
+                          "command"
+                        ]
+                      },
+                      "httpGet": {
+                        "type": "object",
+                        "properties": {
+                          "path": {
+                            "type": "string"
+                          },
+                          "port": {
+                            "type": "string"
+                          },
+                          "host": {
+                            "type": "string"
+                          },
+                          "scheme": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "path",
+                          "port",
+                          "host",
+                          "scheme"
+                        ]
+                      },
+                      "tcpSocket": {
+                        "type": "object",
+                        "properties": {
+                          "port": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "port"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "exec",
+                      "httpGet",
+                      "tcpSocket"
+                    ]
+                  }
+                },
+                "required": [
+                  "postStart",
+                  "preStop"
+                ]
+              },
+              "terminationMessagePath": {
+                "type": "string"
+              },
+              "imagePullPolicy": {
+                "type": "string"
+              },
+              "securityContext": {
+                "type": "object",
+                "properties": {
+                  "capabilities": {
+                    "type": "object",
+                    "properties": {
+                      "add": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {}
+                        }
+                      },
+                      "drop": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {}
+                        }
+                      }
+                    },
+                    "required": [
+                      "add",
+                      "drop"
+                    ]
+                  },
+                  "privileged": {
+                    "type": "boolean"
+                  },
+                  "seLinuxOptions": {
+                    "type": "object",
+                    "properties": {
+                      "user": {
+                        "type": "string"
+                      },
+                      "role": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "level": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "user",
+                      "role",
+                      "type",
+                      "level"
+                    ]
+                  },
+                  "runAsUser": {
+                    "type": "integer"
+                  },
+                  "runAsNonRoot": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "capabilities",
+                  "privileged",
+                  "seLinuxOptions",
+                  "runAsUser",
+                  "runAsNonRoot"
+                ]
+              },
+              "stdin": {
+                "type": "boolean"
+              },
+              "stdinOnce": {
+                "type": "boolean"
+              },
+              "tty": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "name",
+              "image",
+              "command",
+              "args",
+              "workingDir",
+              "ports",
+              "env",
+              "resources",
+              "volumeMounts",
+              "livenessProbe",
+              "readinessProbe",
+              "lifecycle",
+              "terminationMessagePath",
+              "imagePullPolicy",
+              "securityContext",
+              "stdin",
+              "stdinOnce",
+              "tty"
+            ]
+          }
+        },
+        "restartPolicy": {
+          "type": "string"
+        },
+        "terminationGracePeriodSeconds": {
+          "type": "integer"
+        },
+        "activeDeadlineSeconds": {
+          "type": "integer"
+        },
+        "dnsPolicy": {
+          "type": "string"
+        },
+        "serviceAccountName": {
+          "type": "string"
+        },
+        "serviceAccount": {
+          "type": "string"
+        },
+        "nodeName": {
+          "type": "string"
+        },
+        "hostNetwork": {
+          "type": "boolean"
+        },
+        "hostPID": {
+          "type": "boolean"
+        },
+        "hostIPC": {
+          "type": "boolean"
+        },
+        "securityContext": {
+          "type": "object",
+          "properties": {
+            "seLinuxOptions": {
+              "type": "object",
+              "properties": {
+                "user": {
+                  "type": "string"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "level": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user",
+                "role",
+                "type",
+                "level"
+              ]
+            },
+            "runAsUser": {
+              "type": "integer"
+            },
+            "runAsNonRoot": {
+              "type": "boolean"
+            },
+            "supplementalGroups": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {}
+              }
+            },
+            "fsGroup": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "seLinuxOptions",
+            "runAsUser",
+            "runAsNonRoot",
+            "supplementalGroups",
+            "fsGroup"
+          ]
+        },
+        "imagePullSecrets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        }
+      },
+      "required": [
+        "volumes",
+        "containers",
+        "restartPolicy",
+        "terminationGracePeriodSeconds",
+        "activeDeadlineSeconds",
+        "dnsPolicy",
+        "serviceAccountName",
+        "serviceAccount",
+        "nodeName",
+        "hostNetwork",
+        "hostPID",
+        "hostIPC",
+        "securityContext",
+        "imagePullSecrets"
+      ]
+    },
+    "status": {
+      "type": "object",
+      "properties": {
+        "phase": {
+          "type": "string"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "lastProbeTime": {
+                "type": "string"
+              },
+              "lastTransitionTime": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "status",
+              "lastProbeTime",
+              "lastTransitionTime",
+              "reason",
+              "message"
+            ]
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "hostIP": {
+          "type": "string"
+        },
+        "podIP": {
+          "type": "string"
+        },
+        "startTime": {
+          "type": "string"
+        },
+        "containerStatuses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "state": {
+                "type": "object",
+                "properties": {
+                  "waiting": {
+                    "type": "object",
+                    "properties": {
+                      "reason": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "reason",
+                      "message"
+                    ]
+                  },
+                  "running": {
+                    "type": "object",
+                    "properties": {
+                      "startedAt": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "startedAt"
+                    ]
+                  },
+                  "terminated": {
+                    "type": "object",
+                    "properties": {
+                      "exitCode": {
+                        "type": "integer"
+                      },
+                      "signal": {
+                        "type": "integer"
+                      },
+                      "reason": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "startedAt": {
+                        "type": "string"
+                      },
+                      "finishedAt": {
+                        "type": "string"
+                      },
+                      "containerID": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "exitCode",
+                      "signal",
+                      "reason",
+                      "message",
+                      "startedAt",
+                      "finishedAt",
+                      "containerID"
+                    ]
+                  }
+                },
+                "required": [
+                  "waiting",
+                  "running",
+                  "terminated"
+                ]
+              },
+              "lastState": {
+                "type": "object",
+                "properties": {
+                  "waiting": {
+                    "type": "object",
+                    "properties": {
+                      "reason": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "reason",
+                      "message"
+                    ]
+                  },
+                  "running": {
+                    "type": "object",
+                    "properties": {
+                      "startedAt": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "startedAt"
+                    ]
+                  },
+                  "terminated": {
+                    "type": "object",
+                    "properties": {
+                      "exitCode": {
+                        "type": "integer"
+                      },
+                      "signal": {
+                        "type": "integer"
+                      },
+                      "reason": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "startedAt": {
+                        "type": "string"
+                      },
+                      "finishedAt": {
+                        "type": "string"
+                      },
+                      "containerID": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "exitCode",
+                      "signal",
+                      "reason",
+                      "message",
+                      "startedAt",
+                      "finishedAt",
+                      "containerID"
+                    ]
+                  }
+                },
+                "required": [
+                  "waiting",
+                  "running",
+                  "terminated"
+                ]
+              },
+              "ready": {
+                "type": "boolean"
+              },
+              "restartCount": {
+                "type": "integer"
+              },
+              "image": {
+                "type": "string"
+              },
+              "imageID": {
+                "type": "string"
+              },
+              "containerID": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "state",
+              "lastState",
+              "ready",
+              "restartCount",
+              "image",
+              "imageID",
+              "containerID"
+            ]
+          }
+        }
+      },
+      "required": [
+        "phase",
+        "conditions",
+        "message",
+        "reason",
+        "hostIP",
+        "podIP",
+        "startTime",
+        "containerStatuses"
+      ]
+    }
+  },
+  "required": [
+    "kind",
+    "apiVersion",
+    "metadata",
+    "spec",
+    "status"
+  ]
+}

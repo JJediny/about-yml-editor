@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 /_site
+=======
+/node_modules/
+/.idea/
+>>>>>>> 26e221593e3678794d4abf6c0ba98ccb180c7387

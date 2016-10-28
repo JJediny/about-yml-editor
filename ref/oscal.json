@@ -1,0 +1,397 @@
+{
+  "definitions": {
+    "statusType": {
+      "enum": [
+        "WITHDRAWN"
+      ]
+    },
+    "impactType": {
+      "enum": [
+        "LOW",
+        "MODERATE",
+        "HIGH"
+      ]
+    },
+    "priorityType": {
+      "enum": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    "paragraphsType": {
+      "minLength": 2,
+      "maxLength": 5000,
+      "type": "string"
+    },
+    "withdrawnType": {
+      "required": [
+        "incorporated-into"
+      ],
+      "type": "object",
+      "properties": {
+        "incorporated-into": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "supplemental-guidance": {
+      "type": "object",
+      "properties": {
+        "related": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0
+        }
+      }
+    },
+    "control-enhancements": {
+      "required": [
+        "number",
+        "control-enhancement"
+      ],
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "string"
+        },
+        "control-enhancement": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/controlEnhancementType"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "referencesType": {
+      "required": [
+        "reference"
+      ],
+      "type": "object",
+      "properties": {
+        "reference": {
+          "type": "array",
+          "items": {
+            "type": "referenceType"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "controlStatementType": {
+      "type": "object",
+      "properties": {
+        "statement": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/controlStatementType"
+          },
+          "minItems": 0
+        },
+        "number": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "number"
+      ]
+    },
+    "controlObjectiveType": {
+      "type": "object",
+      "properties": {
+        "objective": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/controlObjectiveType"
+          },
+          "minItems": 0
+        },
+        "number": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "number"
+      ]
+    },
+    "controlPotentialAssessmentsType": {
+      "required": [
+        "potential-assessment"
+      ],
+      "type": "object",
+      "properties": {
+        "potential-assessment": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/potential-assessment"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "controlEnhancementType": {
+      "type": "object",
+      "properties": {
+        "withdrawn": {
+          "$ref": "#/definitions/withdrawnType"
+        },
+        "baseline-impact": {
+          "maxItems": 3,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/impactType"
+          },
+          "minItems": 0
+        },
+        "statement": {
+          "$ref": "#/definitions/statement"
+        },
+        "supplemental-guidance": {
+          "$ref": "#/definitions/supplemental-guidance"
+        },
+        "objective": {
+          "$ref": "#/definitions/objective"
+        },
+        "potential-assessments": {
+          "$ref": "#/definitions/controlPotentialAssessmentsType"
+        },
+        "number": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "number"
+      ]
+    },
+    "overlayType": {
+      "required": [
+        "controls",
+        "tailored",
+        "id",
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "controls": {
+          "type": "controls"
+        },
+        "tailored": {
+          "$ref": "#/definitions/tailored"
+        },
+        "baseline-impact": {
+          "$ref": "#/definitions/impactType"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "systemType": {
+      "required": [
+        "controls",
+        "tailored",
+        "id",
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "controls": {
+          "type": "controls"
+        },
+        "tailored": {
+          "$ref": "#/definitions/tailored"
+        },
+        "baseline-impact": {
+          "$ref": "#/definitions/impactType"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "objective": {
+      "type": "object",
+      "properties": {
+        "objective": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/controlObjectiveType"
+          },
+          "minItems": 0
+        }
+      }
+    },
+    "statement": {
+      "type": "object",
+      "properties": {
+        "statement": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/controlStatementType"
+          },
+          "minItems": 0
+        }
+      }
+    },
+    "references": {
+      "required": [
+        "reference"
+      ],
+      "type": "object",
+      "properties": {
+        "reference": {
+          "type": "array",
+          "items": {
+            "type": "referenceType"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "relationships": {
+      "required": [
+        "relationship"
+      ],
+      "type": "object",
+      "properties": {
+        "relationship": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/relationshipType"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "potential-assessment": {
+      "required": [
+        "object",
+        "method"
+      ],
+      "type": "object",
+      "properties": {
+        "object": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "method": {
+          "enum": [
+            "EXAMINE",
+            "INTERVIEW",
+            "TEST"
+          ]
+        }
+      }
+    },
+    "tailored": {
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "type": "object"
+    },
+    "relationshipType": {
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "control": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "control"
+      ],
+      "type": "object"
+    },
+    "controlType": {
+      "properties": {
+        "status": {
+          "$ref": "#/definitions/statusType"
+        },
+        "withdrawn": {
+          "$ref": "#/definitions/withdrawnType"
+        },
+        "priority": {
+          "$ref": "#/definitions/priorityType"
+        },
+        "baseline-impact": {
+          "maxItems": 3,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/impactType"
+          },
+          "minItems": 0
+        },
+        "statement": {
+          "$ref": "#/definitions/statement"
+        },
+        "supplemental-guidance": {
+          "$ref": "#/definitions/supplemental-guidance"
+        },
+        "objective": {
+          "$ref": "#/definitions/objective"
+        },
+        "potential-assessments": {
+          "$ref": "#/definitions/controlPotentialAssessmentsType"
+        },
+        "control-enhancements": {
+          "$ref": "#/definitions/control-enhancements"
+        },
+        "references": {
+          "$ref": "#/definitions/references"
+        },
+        "relationships": {
+          "$ref": "#/definitions/relationships"
+        },
+        "control-class": {
+          "type": "string"
+        },
+        "family": {
+          "type": "string"
+        },
+        "number": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "number"
+      ]
+    }
+  },
+  "$ref": "#/definitions/controlType"
+}
