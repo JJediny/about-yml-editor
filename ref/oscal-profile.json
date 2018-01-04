@@ -309,17 +309,11 @@
       "properties": {
         "props": {
           "type": "array",
-          "description": "",
-          "items": {
-            "$ref": "oscal-core.json#/definitions/prop"
-          }
+          "description": ""
         },
         "parts": {
           "type": "array",
-          "description": "",
-          "items": {
-            "$ref": "oscal-core.json#/definitions/part"
-          }
+          "description": ""
         }
       },
       "propertyNames": {
@@ -351,7 +345,7 @@
     },
     "framework": {
       "description": "",
-      "$ref": "oscal-core.json#/definitions/framework"
+      "type": "string"
     }
   },
   "propertyNames": {
